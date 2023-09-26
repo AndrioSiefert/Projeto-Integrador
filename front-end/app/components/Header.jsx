@@ -1,6 +1,6 @@
 export function Header() {
   return (
-    <header className="flex items-center w-full h-20 bg-black">
+    <header className="flex items-center w-full h-20 bg-gradient-to-r from-violet-600 to-violet-400 drop-shadow-md">
       <div className="w-full max-w-[1246px] px-[15px] mx-auto">
         <div>
           <div className="flex items-center gap-14">
@@ -55,8 +55,8 @@ export function Header() {
               <div>
                 <ul>
                   <li>
-                    <button className="flex items-center gap-3">
-                      <span className="text-white">Home</span>
+                    <button className="flex items-center gap-3 ">
+                      <span className="text-white hover:font-bold">Home</span>
                     </button>
                   </li>
                 </ul>
@@ -65,7 +65,9 @@ export function Header() {
                 <ul>
                   <li>
                     <button className="flex items-center gap-3">
-                      <span className="text-white">Serviços</span>
+                      <span className="text-white hover:font-bold">
+                        Serviços
+                      </span>
                     </button>
                   </li>
                 </ul>
@@ -74,7 +76,9 @@ export function Header() {
                 <ul>
                   <li>
                     <button className="flex items-center gap-3">
-                      <span className="text-white">Produtos</span>
+                      <span className="text-white hover:font-bold">
+                        Produtos
+                      </span>
                     </button>
                   </li>
                 </ul>
@@ -83,7 +87,7 @@ export function Header() {
                 <ul>
                   <li>
                     <button className="flex items-center gap-3">
-                      <span className="text-white">Agenda</span>
+                      <span className="text-white hover:font-bold">Agenda</span>
                     </button>
                   </li>
                 </ul>

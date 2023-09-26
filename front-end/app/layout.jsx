@@ -1,5 +1,6 @@
 import { Header } from './components/Header';
 import { SectionHome } from './components/SectionHome';
+import { SectionServices } from './components/SectionServices';
 import './globals.css';
 import { Inter } from 'next/font/google';
 
@@ -15,8 +16,9 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body className={inter.className}>
         <Header />
-        <SectionHome />
         {children}
+        <SectionHome />
+        <SectionServices />
       </body>
     </html>
   );
