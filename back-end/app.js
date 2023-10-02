@@ -1,9 +1,10 @@
-import express from 'express'
-import cors from "cors"
-import routes from './routes.js'
-import { Anamnese } from './models/Anamnese.js'
-import { Cliente } from './models/Cliente.js'
-import { Admin } from './models/Admin.js'
+import express from 'express';
+import cors from "cors";
+import routes from './routes.js';
+import { sequelize } from './databases/dados.js';
+import { Anamnese } from './models/Anamnese.js';
+import { Cliente } from './models/Cliente.js';
+import { Admin } from './models/Admin.js';
 
 
 const app = express()
@@ -19,7 +20,6 @@ app.use(routes)
 const conecta_db = async () => {
     try {
         await sequelize.authenticate();
-        await clienteCreate.sync();
         await Cliente.sync();
         await Anamnese.sync();
         await Admin.sync();

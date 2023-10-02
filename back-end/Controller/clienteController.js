@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import * as dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 
-import { Cliente } from './models/Cliente.js';
+import { Cliente } from '../models/Cliente.js';
 
 dotenv.config();
 

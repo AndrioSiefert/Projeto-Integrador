@@ -31,10 +31,6 @@ export const Cliente = sequelize.define('cliente', {
     senha: {
         type: DataTypes.STRING(60),
         allowNull: false
-    },
-    createAt: {
-        Type: Date,
-        default: new Date()
     }
 });
 

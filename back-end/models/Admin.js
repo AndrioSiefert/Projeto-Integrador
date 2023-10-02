@@ -12,7 +12,7 @@ export const Admin = sequelize.define('admin', {
         allowNull: false,
         unique: true,
         validate: {
-            isEmail: True
+            isEmail: true
         }
     },
     senha: {

@@ -1,6 +1,6 @@
 import { sequelize } from '../databases/dados.js';
+import { DataTypes } from 'sequelize';
 import { Cliente } from './Cliente.js'
-
 
 export const Anamnese = sequelize.define('anamnese', {
     id: {
