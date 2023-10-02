@@ -1,6 +1,9 @@
 import express from 'express'
 import cors from "cors"
 import routes from './routes.js'
+import { Anamnese } from './models/Anamnese.js'
+import { Cliente } from './models/Cliente.js'
+import { Admin } from './models/Admin.js'
 
 
 const app = express()
@@ -16,9 +19,12 @@ app.use(routes)
 const conecta_db = async () => {
     try {
         await sequelize.authenticate();
-        console.log("Conexão estabelecida!");
-        await clienteCreate.sync()
-    } catch (error) {
+        await clienteCreate.sync();
+        await Cliente.sync();
+        await Anamnese.sync();
+        await Admin.sync();
+    }
+    catch (error) {
         console.error("Erro na Conexão", error);
     }
 }

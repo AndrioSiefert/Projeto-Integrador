@@ -8,7 +8,7 @@ export const Cliente = sequelize.define('cliente', {
         primaryKey: true,
         autoIncrement: true
     },
-    nome: {
+    usuario: {
         type: DataTypes.STRING(40),
         allowNull: false
     },
@@ -31,6 +31,10 @@ export const Cliente = sequelize.define('cliente', {
     senha: {
         type: DataTypes.STRING(60),
         allowNull: false
+    },
+    createAt: {
+        Type: Date,
+        default: new Date()
     }
 });
 
