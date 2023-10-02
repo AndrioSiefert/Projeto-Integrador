@@ -1,8 +1,8 @@
-import { Header } from './components/Header';
-import { SectionHome } from './components/SectionHome';
-import { SectionServices } from './components/SectionServices';
 import './globals.css';
 import { Inter } from 'next/font/google';
+import Heaader from '@/components/Header';
+import SectionBanner from '@/components/SectionBanner';
+import SectionPersona from '@/components/SectionPersona';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -13,12 +13,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="pt-br">
-      <body className={inter.className}>
-        <Header />
+    <html lang="en">
+      <body>
+        <Heaader />
+        <SectionBanner />
+        <SectionPersona />
         {children}
-        <SectionHome />
-        <SectionServices />
       </body>
     </html>
   );

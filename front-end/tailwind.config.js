@@ -8,11 +8,10 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        img_bg_home:
-          "url('https://www.tecnicageracao.com.br/wp-content/uploads/2019/01/post-blog-diferenca-entre-massagem-e-massoterapia.jpg')",
-        img_bg_home2: "url('../bghome.jpg')",
+        img_bg_home2: "url('../banner.png') ",
       },
+      
     },
   },
   plugins: [],
-};
+}
