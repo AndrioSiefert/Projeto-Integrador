@@ -8,7 +8,7 @@ import { Cliente } from '../models/Cliente.js';
 dotenv.config();
 
 
-export const clienteIndex = async (res) => {
+export const clienteIndex = async (req, res) => {
     try {
         const cliente = await Cliente.findAll();
         res.status(200).json(cliente)
@@ -42,6 +42,9 @@ export const clienteCreate = async (req, res) => {
     }
 
 };
+
+
+
 
 
 
