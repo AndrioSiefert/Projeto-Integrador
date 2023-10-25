@@ -5,6 +5,7 @@ import { sequelize } from './databases/dados.js';
 import { Anamnese } from './models/Anamnese.js';
 import { Cliente } from './models/Cliente.js';
 import { Admin } from './models/Admin.js';
+import { Agendamento } from './models/Agendamento.js';
 
 
 const app = express()
@@ -23,6 +24,7 @@ const conecta_db = async () => {
         await Cliente.sync();
         await Anamnese.sync();
         await Admin.sync();
+        await Agendamento.sync();
     }
     catch (error) {
         console.error("Erro na Conexão", error);
