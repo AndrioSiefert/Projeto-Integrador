@@ -1,27 +1,32 @@
-import { sequelize} from '../databases/dados.js';
+import { sequelize } from '../databases/dados.js';
 import { DataTypes } from "sequelize";
-import { Cliente } from './Cliente';
+import { Cliente } from './Cliente.js';
 
 export const Agendamento = sequelize.define('agendamento', {
     id: {
-        type: Datatypes.INTEGER,
+        type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true
     },
 
-    DiaAgendado: {
+    diaAgendado: {
         type: DataTypes.DATE,
         allowNull: false,
         unique: true
+    },
+
+    disponivel: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
     }
 
-    
+
 
 })
 
 
 Agendamento.belongsTo(Cliente, {
-    foreginKey: {
+    foreignKey: {
         name: 'cliente_id',
         allowNull: false
     },

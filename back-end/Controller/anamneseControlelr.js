@@ -1,4 +1,4 @@
-import { Anamnese } from "../models/Anamnese";
+import { Anamnese } from "../models/Anamnese.js";
 
 
 
@@ -13,4 +13,6 @@ export const anamneseIndex = async (req, res) => {
 
 export const createAnamnese = async (req, res) => {
     // FORMULARIO 
+
+
 }

@@ -2,8 +2,8 @@ import { Router } from "express"
 
 import { clienteIndex, clienteCreate, usuarioSenha } from "./Controller/clienteController.js"
 import { AdmIndex, createAdm, loginAdm } from "./Controller/AdminController.js"
-import { } from "./Controller/agendamentoController.js"
-import { } from "./Controller/anamneseController.js"
+import { agendaindex, agendamentoMark } from "./Controller/agendamentoController.js"
+// import { } from "./Controller/anamneseController.js"
 
 const router = Router()
 
@@ -16,7 +16,8 @@ router
     .post('/admin', createAdm)
     .post('/adm', loginAdm)
 
-    .get('/')
+    .get('/agenda', agendaindex)
+    .post('/agenda', agendamentoMark)
 
 
 

@@ -1,7 +1,7 @@
-import { Admin } from './models/Admin.js'
+import { Admin } from '../models/Admin.js'
 
-export const AdmIndex = async (req, res) =>{
-   try {
+export const AdmIndex = async (req, res) => {
+    try {
         const adm = await Admin.findAll();
         res.status(200).json(adm);
     } catch (error) {
@@ -14,17 +14,17 @@ export const AdmIndex = async (req, res) =>{
 export const createAdm = async (req, res) => {
     const { login, senha } = req.body
 
-    if (!login, !senha ) {
-        res.status(400).json({ id: 0, alert: "Coloque senha e login para criar sua conta"})
+    if (!login, !senha) {
+        res.status(400).json({ id: 0, alert: "Coloque senha e login para criar sua conta" })
     }
 }
 
 export const loginAdm = async (req, res) => {
-    const { login, senha} = req.body
+    const { login, senha } = req.body
 
     if (!login || !senha) {
-    res.status(400).json({id:0, msg: "Login Incorreto"})
-    return
+        res.status(400).json({ id: 0, msg: "Login Incorreto" })
+        return
 
     }
 }
