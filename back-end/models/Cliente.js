@@ -2,6 +2,7 @@ import { DataTypes } from 'sequelize';
 import { sequelize } from '../databases/dados.js';
 
 
+
 export const Cliente = sequelize.define('cliente', {
     id: {
         type: DataTypes.INTEGER,
@@ -33,4 +34,5 @@ export const Cliente = sequelize.define('cliente', {
         allowNull: false
     }
 });
+
 

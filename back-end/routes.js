@@ -16,8 +16,8 @@ router
     .post('/admin', createAdm)
     .post('/adm', loginAdm)
 
-    .get('/agenda', agendaindex)
-    .post('/agenda', agendamentoMark)
+    .get('/agendamento', agendaindex)
+    .post('/agendamento', agendamentoMark)
 
 
 

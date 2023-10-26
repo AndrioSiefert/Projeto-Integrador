@@ -8,6 +8,8 @@ import { Admin } from './models/Admin.js';
 import { Agendamento } from './models/Agendamento.js';
 
 
+
+
 const app = express()
 const port = 3000
 
@@ -22,9 +24,9 @@ const conecta_db = async () => {
     try {
         await sequelize.authenticate();
         await Cliente.sync();
+        await Agendamento.sync();
         await Anamnese.sync();
         await Admin.sync();
-        await Agendamento.sync();
     }
     catch (error) {
         console.error("Erro na Conexão", error);

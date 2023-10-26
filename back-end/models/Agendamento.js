@@ -9,28 +9,25 @@ export const Agendamento = sequelize.define('agendamento', {
         primaryKey: true
     },
 
-    diaAgendado: {
-        type: DataTypes.DATE,
-        allowNull: false,
-        unique: true
+    mes: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     },
-
-    disponivel: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: true
+    dia: {
+        type: DataTypes.INTEGER,
+        allowNull: false
     }
 
 
 
-})
-
+});
 
 Agendamento.belongsTo(Cliente, {
     foreignKey: {
-        name: 'cliente_id',
+        name: 'agendamento_cliente_id',
         allowNull: false
     },
     onDelete: 'RESTRICT',
     onUpdate: 'CASCADE'
+});
 
-})
