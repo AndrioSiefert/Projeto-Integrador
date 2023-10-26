@@ -1,7 +1,7 @@
 import { Router } from "express"
 
 import { clienteIndex, clienteCreate, usuarioSenha } from "./Controller/clienteController.js"
-import { AdmIndex, createAdm, loginAdm } from "./Controller/AdminController.js"
+import { AdmIndex, createAdm, loginAdm } from "./Controller/admController.js"
 import { agendaindex, agendamentoMark } from "./Controller/agendamentoController.js"
 // import { } from "./Controller/anamneseController.js"
 
@@ -13,8 +13,8 @@ router
     .post('/cliente', usuarioSenha)
 
     .get('/adm', AdmIndex)
-    .post('/admin', createAdm)
-    .post('/adm', loginAdm)
+    .post('/adm', createAdm)
+    .post('/adm/login', loginAdm)
 
     .get('/agendamento', agendaindex)
     .post('/agendamento', agendamentoMark)

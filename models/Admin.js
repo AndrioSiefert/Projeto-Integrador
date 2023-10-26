@@ -8,12 +8,9 @@ export const Admin = sequelize.define('admin', {
         autoIncrement: true
     },
     login: {
-        type: DataTypes.STRING,
+        type: DataTypes.STRING(50),
         allowNull: false,
-        unique: true,
-        validate: {
-            isEmail: true
-        }
+        unique: true
     },
     senha: {
         type: DataTypes.STRING(60),
