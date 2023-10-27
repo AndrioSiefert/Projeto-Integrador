@@ -5,9 +5,9 @@ import { Cliente } from '../models/Cliente.js'
 export const agendaindex = async (req, res) => {
   try {
     const agenda = await Agendamento.findAll();
-    req.status(200).json(agenda);
+    res.status(200).json(agenda);
   } catch (error) {
-    req.status(400).send(error);
+    res.status(400).send(error);
   }
 }
 

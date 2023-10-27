@@ -18,12 +18,20 @@ export const clienteIndex = async (req, res) => {
 }
 
 export const clienteCreate = async (req, res) => {
+
     const { usuario, email, senha, telefone, cpf } = req.body
 
 
     if (!usuario || !email || !senha || !telefone || !cpf) {
         res.status(400).json({ id: 0, msg: "Erro... Informe os dados" })
         return
+    }
+
+    const verificarEmail = await Cliente.findOne({ where: { email } })
+
+    if (verificarEmail) {
+        res.status(400).json({ id: 0, msg: "Erro... E-mail já cadastrado" })
+        return;
     }
 
 
@@ -33,9 +41,10 @@ export const clienteCreate = async (req, res) => {
         const senhaString = senha.toString();
         const hash = bcrypt.hashSync(senhaString, salt);
         // console.log(salt + "\n" + hash);
-        const cliente = await Cliente.create({
-            usuario, email, senha: hash, telefone, cpf
-        });
+
+
+
+        const cliente = await Cliente.create({usuario, email, senha: hash, telefone, cpf });
         res.status(201).json(cliente)
     } catch (error) {
         res.status(400).send(error)
@@ -81,8 +90,6 @@ export const usuarioSenha = async (req, res) => {
             usuario.senha = hash;
 
             await usuario.save();
-
-
 
             const token = jwt.sign({ email }, process.env.JWT_KEY, { expiresIn: '1h' });
             const mailOptions = {
