@@ -19,7 +19,6 @@ export const Agendamento = sequelize.define('agendamento', {
     }
 
 
-
 });
 
 Agendamento.belongsTo(Cliente, {
