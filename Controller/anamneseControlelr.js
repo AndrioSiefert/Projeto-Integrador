@@ -12,7 +12,9 @@ export const anamneseIndex = async (req, res) => {
 }
 
 export const createAnamnese = async (req, res) => {
-    // FORMULARIO 
-    // Vincular com o cliente e o front
+    // FORMULARIO:
+
+    // Vincular com o cliente
+    // acresentar perguntas do formulario
 
 }
