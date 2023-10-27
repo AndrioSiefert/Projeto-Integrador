@@ -36,7 +36,7 @@ const conecta_db = async () => {
 conecta_db()
 
 
-app.get('/cliente', (req, res) => {
+app.get('/', (req, res) => {
     res.send('API MASSOTERAPIA')
 })
 
