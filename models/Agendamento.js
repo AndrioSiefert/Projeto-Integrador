@@ -1,4 +1,4 @@
-import { sequelize } from '../databases/dados.js';
+import { sequelize } from '../database/dados.js';
 import { DataTypes } from "sequelize";
 import { Cliente } from './Cliente.js';
 
@@ -15,6 +15,10 @@ export const Agendamento = sequelize.define('agendamento', {
     },
     dia: {
         type: DataTypes.INTEGER,
+        allowNull: false
+    },
+    horas: {
+        type: DataTypes.STRING,
         allowNull: false
     }
 

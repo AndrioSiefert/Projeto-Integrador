@@ -16,28 +16,23 @@ export const agendaindex = async (req, res) => {
 
 export const agendamentoMark = async (req, res) => {
 
-  // TAREFAS PARA FAZER:
-
-  // PODER MARCAR NO MESMO DIA EM HORARIOS DIFERENTES
-  // O MESMO CLIENTE NÃO PODE ADICIONAR MAIS DE UM AGENDAMENTO QUANDO ELE JÁ TEM UM MARCADO
-  // EXPIRAR O DIA DELE QUANDO O DIA PASSAR
-  // ACRESCENTAR HORARIO NO AGENDAMENTO
-  // NOTIFICAR VIA WHATS
-  // VINCULAR COM CALENDARIO DO FRONT-END
-
-
-
   const mes = req.body.mes;
   const dia = req.body.dia;
+  const horas = req.body.horas;
   const clienteId = req.body.clienteId
-  if (!mes || !dia || !clienteId) {
+  if (!mes || !dia || !horas || !clienteId) {
     res.status(400).json({ msg: "Preencha todos os campos" });
     return;
   }
 
   try {
-    const data = await Agendamento.findOne({ where: { mes: mes, dia: dia } });
+    const clienteAgendado = await Agendamento.findOne({ where: { agendamento_cliente_id: clienteId } });
+    if (clienteAgendado) {
+      res.status(400).json({ msg: "Cliente já possui agendamento" });
+      return;
+    }
 
+    const data = await Agendamento.findOne({ where: { mes: mes, dia: dia, horas: horas } });
     if (data) {
       res.status(400).json({ msg: "Data já marcada" });
       return;
@@ -50,7 +45,7 @@ export const agendamentoMark = async (req, res) => {
       return;
     }
 
-    const agenda = await Agendamento.create({ mes: mes, dia: dia, agendamento_cliente_id: clienteId });
+    const agenda = await Agendamento.create({ horas: horas, mes: mes, dia: dia, agendamento_cliente_id: clienteId });
     res.status(201).json(agenda);
   } catch (error) {
     res.status(400).send(error);

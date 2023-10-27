@@ -14,7 +14,8 @@
   
 #### Banco de Dados:
 - :repeat:Sqlite3:  Projeto pequeno então o sqlite3 facilita o compartilhamento inicial dos dados, onde foi substituido pelo mysql2;
-  :gear: Models
+
+- :gear: Models
   
 
 #### CLIENTE:
@@ -22,12 +23,24 @@
 - :white_check_mark:Criptografia da senha;
 - :wrench:( AINDA NÃO TESTADO ) Middleware para trocar a senha gerando um token
 
+27/10
+
+-Cliente não pode criar duas contas com mesmo E-mail;
+
+
 
 #### AGENDAMENTO:
 - :white_check_mark:Agendamento vinculado com o ID do cliente;
 
 - :white_check_mark:Não Permitido marcar no mesmo dia;
 - :wrench:( FUTURAS MELHORIAS ) Permitir marcar no mesmo dia mas não no mesmo horário;
+
+27/10
+
+-Possivel marcar em horarios diferentes no mesmo dia
+-O MESMO CLIENTE NÃO PODE ADICIONAR MAIS DE UM AGENDAMENTO QUANDO ELE JÁ TEM UM MARCADO
+
+-Estudo de criação de bot com as bibliotecas Twilio e Puppeteer
 
 #### ADMIN:
 - :white_check_mark:Criação de conta;
@@ -43,5 +56,9 @@
 
 
 ## NÃO MODIFICAR EM CIMA :exclamation:
-:exclamation:COLOCA AQUI TODA EVOLUÇÃO INTERESSANTE PARA APRESENTAÇÃO DO RELATORIO ABAIXO:
-:arrow_down::arrow_down::arrow_down::arrow_down::arrow_down::arrow_down::arrow_down::arrow_down:
+
+
+
+
+COLOCA AQUI TODA EVOLUÇÃO INTERESSANTE PARA APRESENTAÇÃO DO RELATORIO:
+
