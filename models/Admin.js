@@ -1,5 +1,5 @@
 import { DataTypes } from 'sequelize';
-import { sequelize } from '../database/dados.js';
+import { sequelize } from '../databases/dados.js';
 
 export const Admin = sequelize.define('admin', {
     id: {
@@ -15,6 +15,10 @@ export const Admin = sequelize.define('admin', {
     senha: {
         type: DataTypes.STRING(10),
         allowNull: false
+    },
+    nivel: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 1
     }
-
 })

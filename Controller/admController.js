@@ -1,13 +1,7 @@
-// CRIAR CRIPTOGRAFIA DE SENHA
-// DAR NIVEL DE ADM
-// NIVEL DE ADM PODE APAGAR AGENDAMENTO
-// NIVEL DE ADM PODE APAGAR CLIENTE OU EDITAR CADASTRO
-// NIVEL DE ADM PARA CRIAR OUTRO ADM
-// NIVEL DE ADM PARA VER TODOS OS AGENDAMENTOS
-// NIVEL DE ADM
-
-
+import jwt from 'jsonwebtoken';
+import * as dotenv from 'dotenv';
 import { Admin } from '../models/Admin.js'
+dotenv.config()
 
 export const AdmIndex = async (req, res) => {
     try {
@@ -23,7 +17,7 @@ export const AdmIndex = async (req, res) => {
 export const createAdm = async (req, res) => {
     const { login, senha } = req.body
 
-    if (!login, !senha) {
+    if (!login || !senha) {
         res.status(400).json({ id: 0, alert: "Coloque senha e login para criar sua conta" })
     }
 
@@ -48,7 +42,8 @@ export const loginAdm = async (req, res) => {
     try {
         const admin = await Admin.findOne({ where: { login, senha } });
         if (admin) {
-            res.status(200).json({ id: admin.id, msg: "Login Bem-Sucedido" });
+            const token = jwt.sign({ id_logged: admin.id, nome_logged: admin.login }, process.env.JWT_KEY, { expiresIn: '1h' });
+            res.status(200).json({ id: admin.id, msg: "Login Bem-Sucedido", token });
         } else {
             res.status(401).json({ id: 0, msg: "Acesso Negado" });
         }
