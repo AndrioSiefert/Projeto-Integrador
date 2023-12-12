@@ -13,7 +13,7 @@ export default function Login() {
 
   async function verificaLogin(data) {
     const filtro = `?email=${data.email}&senha=${data.senha}`;
-    const response = await fetch('http://localhost:3004/clientes' + filtro);
+    const response = await fetch('http://localhost:3004/usuarios' + filtro);
     const dados = await response.json();
     if (dados.length == 0) {
       alert('Usuário ou senha inválidos');
@@ -31,13 +31,13 @@ export default function Login() {
         <h2 className="text-2xl font-semibold mb-4">Login</h2>
         <form onSubmit={handleSubmit(verificaLogin)}>
           <div className="mb-4">
-            <label htmlFor="login" className="block text-gray-600">
-              Login
+            <label htmlFor="email" className="block text-gray-600">
+              Email
             </label>
             <input
               type="text"
-              id="login"
-              name="login"
+              id="email"
+              name="email"
               className="w-full p-2 border rounded mt-1"
               required
               {...register('email')}
@@ -65,7 +65,7 @@ export default function Login() {
         </form>
         <div className="flex justify-between mt-4 text-sm items-center">
           <div>
-            <Link href="#">
+            <Link href="/cadastrousuario">
               <h1 className="text-blue-500 hover:underline">Criar uma conta</h1>
             </Link>
           </div>

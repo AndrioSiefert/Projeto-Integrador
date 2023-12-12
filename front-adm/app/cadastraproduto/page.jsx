@@ -30,7 +30,6 @@ export default function CadastraProduto() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="nome"
               type="text"
-              placeholder="Nome"
               {...register('nome')}
               required
             />
@@ -46,7 +45,6 @@ export default function CadastraProduto() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white "
               id="descricao"
               type="text"
-              placeholder="Descrição"
               {...register('descricao')}
               required
             />
@@ -64,7 +62,6 @@ export default function CadastraProduto() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               id="preco"
               type="text"
-              placeholder="Preço"
               {...register('preco')}
               required
             />
@@ -80,7 +77,6 @@ export default function CadastraProduto() {
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white "
               id="imagem"
               type="text"
-              placeholder="Imagem"
               {...register('imagem')}
             />
           </div>

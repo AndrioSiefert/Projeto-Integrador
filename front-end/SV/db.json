@@ -1,4 +1,38 @@
 {
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "junior",
+      "email": "junior@gmail.com",
+      "cpf": "12345678901",
+      "telefone": "11999999999",
+      "senha": "1234"
+    },
+    {
+      "nome": "teste123",
+      "cpf": "123123123",
+      "email": "teste@gmail.com",
+      "senha": "1234",
+      "telefone": "5330269387",
+      "id": 2
+    },
+    {
+      "nome": "LEONIDIO TESSMANN JUNIOR",
+      "cpf": "123",
+      "email": "tessmannjr@gmail.com",
+      "senha": "1234",
+      "telefone": "5330269387",
+      "id": 3
+    },
+    {
+      "nome": "LEONIDIO TESSMANN JUNIOR",
+      "cpf": "1234",
+      "email": "tessmannjr@gmail.com",
+      "senha": "1234",
+      "telefone": "5330269387",
+      "id": 4
+    }
+  ],
   "clientes": [
     {
       "id": 1,
