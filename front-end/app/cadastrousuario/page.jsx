@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export default function CadastraUsuario() {
@@ -25,7 +26,7 @@ export default function CadastraUsuario() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <form
-        className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-96"
+        className="bg-white shadow-xl rounded px-8 pt-6 pb-8 mb-4 w-96"
         onSubmit={handleSubmit(enviaDados)}
       >
         <div className="mb-4">
@@ -88,12 +89,15 @@ export default function CadastraUsuario() {
             {...register('telefone')}
           />
         </div>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-3">
           <button
             className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded hover:font-semibold"
             type="submit"
           >
             Cadastrar
+          </button>
+          <button className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white p-2 rounded hover:font-semibold">
+            <Link href="/login">Voltar</Link>
           </button>
         </div>
       </form>

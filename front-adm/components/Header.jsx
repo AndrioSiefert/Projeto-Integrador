@@ -29,11 +29,11 @@ export default function Header() {
             Anamnese
           </div>
         </Link>
-        <Link href="/login">
+        {/* <Link href="/login">
           <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
             Login
           </div>
-        </Link>
+        </Link> */}
       </div>
     );
   }
@@ -117,11 +117,11 @@ export default function Header() {
               Anamnese
             </div>
           </Link>
-          <Link href="/login">
+          {/* <Link href="/login">
             <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Login
             </div>
-          </Link>
+          </Link> */}
         </div>
         <div className="flex md:hidden items-center cursor-pointer">
           <button onClick={() => setShowMenu(!showMenu)}>

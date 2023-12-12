@@ -70,9 +70,9 @@ export default function Login() {
             </Link>
           </div>
           <div>
-            <Link href="#">
+            {/* <Link href="#">
               <h1 className="text-blue-500 hover:underline">Recuperar senha</h1>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
