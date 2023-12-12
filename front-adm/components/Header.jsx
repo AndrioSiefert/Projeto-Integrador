@@ -2,7 +2,6 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import { headers } from '@/next.config';
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -10,24 +9,24 @@ export default function Header() {
   function Menu() {
     return (
       <div className="items-center text-center pt-2 text-white">
-        <Link href="/">
+        <Link href="/cliente">
           <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
-            Home
+            Pacientes
           </div>
         </Link>
-        <Link href="#services">
+        <Link href="/servico">
           <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
             Serviços
           </div>
         </Link>
-        <Link href="#products">
+        <Link href="/produto">
           <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
             Produtos
           </div>
         </Link>
         <Link href="#">
           <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
-            Agenda
+            Anamnese
           </div>
         </Link>
         <Link href="/login">
@@ -40,11 +39,10 @@ export default function Header() {
   }
 
   return (
-    <header className=''>
-    <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 pt-4 pb-4 pl-4 pr-4">
+    <header className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 pt-4 pb-4 pl-4 pr-4">
       <div className="flex max-w-[1246px] w-full mx-auto justify-between text-white">
         <div className="flex items-center">
-          <Link href="#">
+          <Link href="/">
             <div className="font-bold  items-center text-xl flex gap-4">
               <div>
                 <svg
@@ -94,33 +92,33 @@ export default function Header() {
                   </defs>
                 </svg>
               </div>
-              <div className="text-4xl">Eliane Seifert</div>
+              <div className="text-4xl">ADM Painel</div>
             </div>
           </Link>
         </div>
         <div className="hidden md:block md:flex gap-4 items-center">
-          <Link href="/">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-violet-950 hover:bg-white">
-              Home
+          <Link href="/cliente">
+            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+              Pacientes
             </div>
           </Link>
-          <Link href="#services">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-violet-950 hover:bg-white">
+          <Link href="/servico">
+            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Serviços
             </div>
           </Link>
-          <Link href="#products">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-violet-950 hover:bg-white">
+          <Link href="/produto">
+            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Produtos
             </div>
           </Link>
           <Link href="#">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-violet-950 hover:bg-white">
-              Agenda
+            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+              Anamnese
             </div>
           </Link>
           <Link href="/login">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-violet-950 hover:bg-white">
+            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Login
             </div>
           </Link>
@@ -149,7 +147,6 @@ export default function Header() {
         </div>
       </div>
       {showMenu && <Menu />}
-    </div>
     </header>
   );
 }
