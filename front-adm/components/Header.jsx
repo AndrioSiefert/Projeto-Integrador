@@ -98,22 +98,22 @@ export default function Header() {
         </div>
         <div className="hidden md:block md:flex gap-4 items-center">
           <Link href="/cliente">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+            <div className="font-bold text-lg rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Pacientes
             </div>
           </Link>
           <Link href="/servico">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+            <div className="font-bold text-lg rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Serviços
             </div>
           </Link>
           <Link href="/produto">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+            <div className="font-bold text-lg rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Produtos
             </div>
           </Link>
           <Link href="#">
-            <div className="font-bold text-xl rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
+            <div className="font-bold text-lg rounded-xl p-2 transition duration-300 ease-out hover:text-zinc-300 hover:bg-slate-800">
               Anamnese
             </div>
           </Link>
