@@ -6,6 +6,8 @@ import { Anamnese } from './models/Anamnese.js';
 import { Cliente } from './models/Cliente.js';
 import { Admin } from './models/Admin.js';
 import { Agendamento } from './models/Agendamento.js';
+import { Produto } from './models/Produto.js';
+import { Servico } from './models/Servico.js';
 
 
 
@@ -27,6 +29,8 @@ const conecta_db = async () => {
         await Agendamento.sync();
         await Anamnese.sync();
         await Admin.sync();
+        await Produto.sync();
+        await Servico.sync();
     }
     catch (error) {
         console.error("Erro na Conexão", error);

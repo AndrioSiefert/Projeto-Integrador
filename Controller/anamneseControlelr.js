@@ -11,11 +11,19 @@ export const anamneseIndex = async (req, res) => {
     }
 }
 
-export const createAnamnese = async (req, res) => {
-    // FORMULARIO:
+export const anamneseCreate = async (req, res) => {
+    const { nome, sexo, dataNascimento, cpf, endereco, cidade, telefone, email } = req.body;
 
-    // VINCULAR FORMULARIO AO CLIENTE
+    if (!nome || !sexo || !dataNascimento || !cpf || !endereco || !cidade || !telefone) {
+        res.status(400).json({ id: 0, msg: "Erro... Informe os dados" });
+        return;
+    }
 
-    // ACRESCENTAR CAMPOS DO FORMULARIO (FRONT-END)
+    try {
+        const anamnese = await Anamnese.create({ nome, sexo, dataNascimento, cpf, endereco, cidade, telefone, email });
+        res.status(201).json(anamnese);
+    } catch (error) {
+        res.status(400).send(error);
+    }
 
 }

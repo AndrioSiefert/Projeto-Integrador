@@ -9,7 +9,7 @@ export const Cliente = sequelize.define('cliente', {
         primaryKey: true,
         autoIncrement: true
     },
-    usuario: {
+    nome: {
         type: DataTypes.STRING(40),
         allowNull: false
     },

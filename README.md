@@ -23,9 +23,9 @@
 - :white_check_mark:Criptografia da senha;
 - :wrench:( AINDA NÃO TESTADO ) Middleware para trocar a senha gerando um token
 
-27/10
+-- // --
 
--Cliente não pode criar duas contas com mesmo E-mail;
+- :white_check_mark:Cliente não pode criar duas contas com mesmo E-mail;
 
 
 
@@ -37,15 +37,18 @@
 
 27/10
 
--Possivel marcar em horarios diferentes no mesmo dia
--O MESMO CLIENTE NÃO PODE ADICIONAR MAIS DE UM AGENDAMENTO QUANDO ELE JÁ TEM UM MARCADO
+- :white_check_mark:Possivel marcar em horarios diferentes no mesmo dia
+- :white_check_mark:O MESMO CLIENTE NÃO PODE ADICIONAR MAIS DE UM AGENDAMENTO QUANDO ELE JÁ TEM UM MARCADO;
 
--Estudo de criação de bot com as bibliotecas Twilio e Puppeteer
+- Estudo de criação de bot com as bibliotecas Twilio e Puppeteer
 
 #### ADMIN:
 - :white_check_mark:Criação de conta;
 - :white_check_mark:Login Adm;
-- :wrench: (ACRESCENTAR NIVEL DE PERMISSÃO )
+- :wrench: (ACRESCENTAR NIVEL DE PERMISSÃO );
+
+-- // -- 
+- :white_check_mark:Nivel de Adm programado, possivel escalar permissões e patente;
   
 
 #### ANAMNESE-

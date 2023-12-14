@@ -19,10 +19,10 @@ export const clienteIndex = async (req, res) => {
 
 export const clienteCreate = async (req, res) => {
 
-    const { usuario, email, senha, telefone, cpf } = req.body
+    const { nome, email, senha, telefone, cpf } = req.body
 
 
-    if (!usuario || !email || !senha || !telefone || !cpf) {
+    if (!nome || !email || !senha || !telefone || !cpf) {
         res.status(400).json({ id: 0, msg: "Erro... Informe os dados" })
         return
     }
@@ -44,7 +44,7 @@ export const clienteCreate = async (req, res) => {
 
 
 
-        const cliente = await Cliente.create({usuario, email, senha: hash, telefone, cpf });
+        const cliente = await Cliente.create({ nome, email, senha: hash, telefone, cpf });
         res.status(201).json(cliente)
     } catch (error) {
         res.status(400).send(error)
@@ -84,10 +84,10 @@ export const usuarioSenha = async (req, res) => {
             return;
         }
 
-        if (bcrypt.compareSync(senha, usuario.senha)) {
+        if (bcrypt.compareSync(senha, nome.senha)) {
             const salt = bcrypt.genSaltSync(12);
             const hash = bcrypt.hashSync(novaSenha, salt);
-            usuario.senha = hash;
+            nome.senha = hash;
 
             await usuario.save();
 
