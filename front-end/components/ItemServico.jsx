@@ -19,7 +19,7 @@ export default function ItemServico(props) {
           </div>
         )}
         <Link href="/">
-          <div className="bg-slate-200 hover:bg-slate-300 font-bold text-purple-600 border border-4 pl-2 pr-2 rounded-md">
+          <div className=" bg-slate-200 hover:bg-slate-300 font-bold text-purple-600 border border-4 pl-2 pr-2 rounded-md">
             Opinião dos Clientes
           </div>
         </Link>

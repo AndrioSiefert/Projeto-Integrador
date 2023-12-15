@@ -1,5 +1,6 @@
 import Swal from 'sweetalert2';
 import { HiTrash } from 'react-icons/hi';
+import { BsFillPencilFill } from 'react-icons/bs';
 
 export default function ItemServico(props) {
   function confirmaExclusao(id) {
@@ -31,13 +32,19 @@ export default function ItemServico(props) {
         {props.servico.nome}
       </th>
       <td className="px-6 py-4">{props.servico.descricao}</td>
+      <td className="px-6 py-4">{props.servico.preco}</td>
       <td className="px-6 py-4">
-        <i
-          className="cursor-pointer"
-          onClick={() => confirmaExclusao(props.servico.id)}
-        >
-          <HiTrash />
-        </i>
+        <div className="flex gap-2">
+          <i
+            className="cursor-pointer"
+            onClick={() => confirmaExclusao(props.servico.id)}
+          >
+            <HiTrash />
+          </i>
+          <i className="cursor-pointer" onClick={props.altera}>
+            <BsFillPencilFill />
+          </i>
+        </div>
       </td>
     </tr>
   );

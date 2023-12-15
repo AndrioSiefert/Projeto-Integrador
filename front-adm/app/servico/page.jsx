@@ -2,10 +2,14 @@
 import { useEffect, useState } from 'react';
 import ItemServico from '@/components/ItemServico';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
 
 export default function Servicos() {
   const [servicos, setServicos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const router = useRouter();
 
   useEffect(() => {
     async function loadServicos() {
@@ -29,6 +33,7 @@ export default function Servicos() {
       key={servico.id}
       servico={servico}
       exclui={() => excluiServico(servico.id)}
+      altera={() => router.push('alteraservico/' + servico.id)}
     />
   ));
 
@@ -50,6 +55,9 @@ export default function Servicos() {
               </th>
               <th scope="col" className="px-6 py-3">
                 Descrição
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Preço
               </th>
               <th scope="col" className="px-6 py-3">
                 Ações

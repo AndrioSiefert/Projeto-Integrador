@@ -119,44 +119,46 @@
   ],
   "servicos": [
     {
-      "id": 1,
-      "nome": "Massagem Sueca",
-      "descricao": "Uma massagem relaxante que utiliza movimentos suaves, amassamentos e fricções para aliviar a tensão muscular."
+      "nome": "Teste",
+      "descricao": "Uma massagem relaxante que utiliza movimentos suaves, amassamentos e fricções para aliviar a tensão muscular.",
+      "preco": "101",
+      "id": 1
     },
     {
       "id": 2,
       "nome": "Massagem Terapêutica",
-      "descricao": "Focada em resolver problemas musculares específicos, a massagem terapêutica utiliza técnicas precisas para aliviar a dor e melhorar a função."
+      "descricao": "Focada em resolver problemas musculares específicos, a massagem terapêutica utiliza técnicas precisas para aliviar a dor e melhorar a função. Focada em resolver problemas musculares específicos, a massagem terapêutica utiliza técnicas precisas para aliviar a dor e melhorar a funçãoFocada em resolver problemas musculares específicos, a massagem terapêutica utiliza técnicas precisas para aliviar a dor e melhorar a função",
+      "preco": 100
     },
     {
       "id": 3,
       "nome": "Massagem Desportiva",
-      "descricao": "Projetada para atletas, essa massagem visa melhorar o desempenho, prevenir lesões e acelerar a recuperação muscular."
+      "descricao": "Projetada para atletas, essa massagem visa melhorar o desempenho, prevenir lesões e acelerar a recuperação muscular.",
+      "preco": 100
     },
     {
       "id": 4,
       "nome": "Shiatsu",
-      "descricao": "Uma técnica japonesa que utiliza pressão dos dedos ao longo dos meridianos de energia do corpo para promover o equilíbrio e a cura."
+      "descricao": "Uma técnica japonesa que utiliza pressão dos dedos ao longo dos meridianos de energia do corpo para promover o equilíbrio e a cura.",
+      "preco": 100
     },
     {
       "id": 5,
       "nome": "Massagem Tailandesa",
-      "descricao": "Envolvendo alongamentos e pressão ao longo das linhas de energia, a massagem tailandesa melhora a flexibilidade e a circulação."
+      "descricao": "Envolvendo alongamentos e pressão ao longo das linhas de energia, a massagem tailandesa melhora a flexibilidade e a circulação.",
+      "preco": 100
     },
     {
       "id": 6,
       "nome": "Reflexologia",
-      "descricao": "Baseada na ideia de que pontos nos pés, mãos e orelhas estão ligados a órgãos específicos, essa técnica promove o equilíbrio e a cura."
+      "descricao": "Baseada na ideia de que pontos nos pés, mãos e orelhas estão ligados a órgãos específicos, essa técnica promove o equilíbrio e a cura.",
+      "preco": 100
     },
     {
+      "nome": "Massagem com Pedras Quentessssssss",
+      "descricao": "Baseada na ideia de que pontos nos pés, mãos e orelhas estão ligados a órgãos específicos, essa técnica promove o equilíbrio e a cura.",
       "id": 7,
-      "nome": "Massagem com Pedras Quentes",
-      "descricao": "Baseada na ideia de que pontos nos pés, mãos e orelhas estão ligados a órgãos específicos, essa técnica promove o equilíbrio e a cura."
-    },
-    {
-      "id": 8,
-      "nome": "Reflexologia",
-      "descricao": "Baseada na ideia de que pontos nos pés, mãos e orelhas estão ligados a órgãos específicos, essa técnica promove o equilíbrio e a cura."
+      "preco": 100
     }
   ],
   "produtos": [

@@ -29,7 +29,7 @@ export default function ItemCliente(props) {
       >
         {props.cliente.nome}
       </th>
-      <td className="px-6 py-4">{props.cliente.idade}</td>
+      {/* <td className="px-6 py-4">{props.cliente.idade}</td> */}
       {/* <td className="px-6 py-4">{props.cliente.sexo}</td> */}
       {/* <td className="px-6 py-4">{props.cliente.dataNascimento}</td> */}
       {/* <td className="px-6 py-4">{props.cliente.profissao}</td> */}
