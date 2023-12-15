@@ -15,7 +15,9 @@ export default function ItemServico(props) {
       <div className="flex justify-end mt-3 items-center gap-2">
         {clienteId && (
           <div className="text-xl text-purple-600">
-            <IoAddCircle />
+            <Link href={'/feedback/' + props.servico.id}>
+              <IoAddCircle />
+            </Link>
           </div>
         )}
         <Link href="/">
