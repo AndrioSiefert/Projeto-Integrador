@@ -15,18 +15,11 @@
 #### Banco de Dados:
 - :repeat:Sqlite3:  Projeto pequeno então o sqlite3 facilita o compartilhamento inicial dos dados, onde foi substituido pelo mysql2;
 
-- :gear: Models
-  
 
 #### CLIENTE:
 - :white_check_mark:Sign in;
 - :white_check_mark:Criptografia da senha;
-- :wrench:( AINDA NÃO TESTADO ) Middleware para trocar a senha gerando um token
-
--- // --
-
-- :white_check_mark:Cliente não pode criar duas contas com mesmo E-mail;
-
+- :gear: Middleware para trocar a senha gerando um token
 
 
 #### AGENDAMENTO:
@@ -40,19 +33,23 @@
 - :white_check_mark:Possivel marcar em horarios diferentes no mesmo dia
 - :white_check_mark:O MESMO CLIENTE NÃO PODE ADICIONAR MAIS DE UM AGENDAMENTO QUANDO ELE JÁ TEM UM MARCADO;
 
-- Estudo de criação de bot com as bibliotecas Twilio e Puppeteer
+- :eye: Estudo de criação de bot com as bibliotecas Twilio e Puppeteer
 
 #### ADMIN:
 - :white_check_mark:Criação de conta;
-- :white_check_mark:Login Adm;
-- :wrench: (ACRESCENTAR NIVEL DE PERMISSÃO );
+- :white_check_mark:Nivel de Adm programado, possivel escalar permissões para cada rota; 
+- :pushpin: Apenas o Adm com o maior nível consegue registrar outro adm e dar seu nível
+- :pushpin: Adicionado outras rotas com nível especifico de admin
 
--- // -- 
-- :white_check_mark:Nivel de Adm programado, possivel escalar permissões e patente;
+
+
   
 
 #### ANAMNESE-
-- Em Andamento :construction:
+
+- Anamnese completo (GET, PUT, DELETE)
+- Ajustado para mostrar a nova atualização modificada (PUT)
+
 
 
 
@@ -60,5 +57,6 @@
 
 ## TESTE
 
+- :lock: TODAS AS ROTAS E CODIGOS SÃO TESTADAS ANTES DE SER ENVIADA AO REPOSITÓRIO (BACK-END)
 
 1° Teste realizado com o banco de dados do back para o front funcional
