@@ -4,6 +4,7 @@ import { clienteIndex, clienteCreate, usuarioSenha } from "./Controller/clienteC
 import { AdmIndex, createAdm, loginAdm } from "./Controller/admController.js"
 import { agendaindex, agendamentoMark } from "./Controller/agendamentoController.js"
 import { anamneseCreate, anamneseIndex } from "./Controller/anamneseControlelr.js"
+import { servicoCreate, servicoDelete, servicoIndex, servicoUpdate } from "./Controller/servicoController.js"
 
 import { isAdmin } from "./middlewares/admPermission.js"
 
@@ -21,8 +22,13 @@ router
     .get('/agendamento', agendaindex)
     .post('/agendamento', agendamentoMark)
 
-    .get('/anamnese', isAdmin(2), anamneseIndex)
-    .post('/anamnese', isAdmin(2), anamneseCreate)
+    .get('/anamnese', anamneseIndex)
+    .post('/anamnese', anamneseCreate)
+
+    .get('/servicos', servicoIndex)
+    .post('/servicos', servicoCreate)
+    .put('/servicos/:id', servicoUpdate)
+    .delete('/servicos/:id', servicoDelete)
 
 
 

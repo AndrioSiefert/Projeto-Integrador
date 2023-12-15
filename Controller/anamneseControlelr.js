@@ -27,3 +27,32 @@ export const anamneseCreate = async (req, res) => {
     }
 
 }
+
+export const anamneseDelete = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const anamnese = await Anamnese.destroy({ where: { id: id } });
+        res.status(200).json(anamnese);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+export const anamneseUpdate = async (req, res) => {
+    const { id } = req.params;
+    const { nome, sexo, dataNascimento, cpf, endereco, cidade, telefone, email } = req.body;
+
+    if (!nome || !sexo || !dataNascimento || !cpf || !endereco || !cidade || !telefone) {
+        res.status(400).json({ id: 0, msg: "Erro... Informe os dados" });
+        return;
+    }
+
+    try {
+        const anamnese = await Anamnese.update({ nome, sexo, dataNascimento, cpf, endereco, cidade, telefone, email }, { where: { id: id } });
+        res.status(200).json(anamnese);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+

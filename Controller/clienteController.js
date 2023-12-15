@@ -45,7 +45,7 @@ export const clienteCreate = async (req, res) => {
 
 
         const cliente = await Cliente.create({ nome, email, senha: hash, telefone, cpf });
-        res.status(201).json(cliente)
+        res.status(201).json({ cliente, msg: "Cliente foi cadastrado com sucesso" })
     } catch (error) {
         res.status(400).send(error)
     }
