@@ -1,28 +1,61 @@
-'use client';
-
-import { useForm } from 'react-hook-form';
-import Link from 'next/link';
+'use client'
+import { data } from 'autoprefixer';
 import { useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
+import { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { ToastContainer, toast } from 'react-toastify';
 
-export default function CadastraCliente() {
-  const { register, handleSubmit, reset } = useForm();
-  const router = useRouter();
+import 'react-toastify/dist/ReactToastify.css';
 
-  async function enviaDados(data) {
-    const cliente = await fetch('http://localhost:3004/cliente', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ ...data }),
-    },
-    router.push('/cliente'));
-  }
+export default function AlteraCliente() {
+    const params = useParams();
+    const { register, handleSubmit, reset } = useForm();
+    const router = useRouter();
 
-  return (
-    <div className="max-w-[1246px] w-full mx-auto mt-4">
+    useEffect(() => {
+        async function loadCliente() {
+            const response = await fetch(
+                'http://localhost:3004/cliente/' + params.id,
+            );
+            const data = await response.json();
+            reset({
+                nome: data.nome,
+                cpf: data.cpf,
+                email: data.email,
+                cidade: data.cidade,
+                dataNascimento: data.dataNascimento,
+                sexo: data.sexo,
+                telefone: data.telefone,
+                endereco: data.endereco,
+            });
+        }
+        loadCliente();
+    }, []);
+
+    async function alteraDados(data) {
+        const response = await fetch(
+            'http://localhost:3004/cliente/' + params.id,
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            },
+        );
+        if (response.status == 200) {
+            toast.success('Cliente alterado com sucesso!');
+            router.push('/cliente');
+        } else {
+            toast.error('Erro ao alterar cliente!');
+        }
+    }
+
+    return(
+<div className="max-w-[1246px] w-full mx-auto mt-4">
       <h2 className="font-bold text-lg">CADASTRO DE PACIENTE</h2>
-      <form onSubmit={handleSubmit(enviaDados)} className="w-full">
+      <form onSubmit={handleSubmit(alteraDados)} className="w-full">
         <div className="flex flex-wrap -mx-3 mb-6 mt-4">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
             <label
@@ -111,57 +144,13 @@ export default function CadastraCliente() {
           <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <label
               className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="dataNascimento"
-            >
-              Data de Nascimento
-            </label>
-            <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-              id="dataNascimento"
-              type="date"
-              placeholder="Nome"
-              {...register('dataNAscimento')}
-              required
-            />
-          </div>
-          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-              for="grid-state"
-            >
-              Sexo
-            </label>
-            <div className="relative">
-              <select
-                className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="sexo"
-                {...register('sexo')}
-              >
-                <option>Masculino</option>
-                <option>Feminino</option>
-                <option>Todes</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <svg
-                  className="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
-              </div>
-            </div>
-          </div>
-          <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <label
-              className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
               for="telefone"
             >
               Telefone
             </label>
             <input
               className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white "
-              id="cidade"
+              id="telefone"
               type="text"
               placeholder="telefone"
               {...register('telefone')}
@@ -302,19 +291,29 @@ export default function CadastraCliente() {
           type="submit"
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
         >
-          Cadastrar
+          Alterar
         </button>
-        <Link href="/cliente">
         <button
           // onClick={router.push('/cliente')}
           className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
         >
           Voltar
-         
         </button>
-        </Link>
         </div>
       </form>
+      <ToastContainer
+        position="top-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
     </div>
-  );
+
+    )
 }

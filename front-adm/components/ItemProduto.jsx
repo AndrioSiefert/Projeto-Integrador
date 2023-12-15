@@ -1,5 +1,7 @@
 import Swal from 'sweetalert2';
 import { HiTrash } from 'react-icons/hi';
+import { BsFillPencilFill } from 'react-icons/bs';
+
 
 export default function ItemProduto(props) {
   function confirmaExclusao(id) {
@@ -33,12 +35,17 @@ export default function ItemProduto(props) {
       <td className="px-6 py-4">{props.produto.preco}</td>
       <td className="px-6 py-4">{props.produto.imagem}</td>
       <td className="px-6 py-4">
+      <div className="flex gap-2">
         <i
           className="cursor-pointer"
           onClick={() => confirmaExclusao(props.produto.id)}
         >
           <HiTrash />
         </i>
+        <i className="cursor-pointer" onClick={props.altera}>
+            <BsFillPencilFill />
+        </i>
+      </div>
       </td>
     </tr>
   );

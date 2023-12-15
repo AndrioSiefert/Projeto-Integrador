@@ -2,10 +2,12 @@
 import { useEffect, useState } from 'react';
 import ItemProduto from '@/components/ItemProduto';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function Produtos() {
   const [produtos, setProdutos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
 
   useEffect(() => {
     async function loadProdutos() {
@@ -29,6 +31,7 @@ export default function Produtos() {
       key={produto.id}
       produto={produto}
       exclui={() => excluiProduto(produto.id)}
+      altera={() => router.push('alteraproduto/' + produto.id)}
     />
   ));
 

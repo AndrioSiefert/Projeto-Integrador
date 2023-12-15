@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 // import { useRouter } from 'next/navegation';
 import ItemCliente from '@/components/ItemCliente';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 import { HiOutlinePlus } from 'react-icons/hi';
 
 export default function Cliente() {
   const [clientes, setClientes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  // const router = useRouter();
+  const router = useRouter();
 
   useEffect(() => {
     async function loadClientes() {
@@ -34,6 +35,7 @@ export default function Cliente() {
       key={cliente.id}
       cliente={cliente}
       exclui={() => excluiCliente(cliente.id)}
+      altera={() => router.push('alteracliente/' + cliente.id)}
     />
   ));
 

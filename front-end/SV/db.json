@@ -49,77 +49,41 @@
   ],
   "cliente": [
     {
-      "id": 2,
       "nome": "Fulana de Tal",
-      "idade": 35,
-      "sexo": "M",
-      "dataNascimento": "1990-01-01",
-      "profissao": "Programador",
-      "estadoCivil": "Solteiro",
       "cpf": "12345678901",
-      "cep": "12345678",
-      "endereco": "Rua dos Bobos, 0",
-      "bairro": "Centro",
+      "email": "junior1@gmail.com",
       "cidade": "São Paulo",
-      "estado": "SP",
+      "dataNascimento": "1990-01-01",
+      "sexo": "Masculino",
       "telefone": "11999999999",
-      "email": "junior1@gmail.com"
+      "endereco": "Rua dos Bobos, 0",
+      "id": 2
     },
     {
-      "id": 3,
-      "nome": "Fulano de Tal",
-      "idade": 30,
-      "sexo": "M",
-      "dataNascimento": "1990-01-01",
-      "profissao": "Programador",
-      "estadoCivil": "Solteiro",
-      "cpf": "12345678901",
-      "cep": "12345678",
-      "endereco": "Rua dos Bobos, 0",
-      "bairro": "Centro",
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "telefone": "11999999999",
-      "email": "teste@teste.com"
+      "nome": "LEONIDIO TESSMANN ",
+      "cpf": "123456",
+      "email": "tessmannjr@gmail.com",
+      "cidade": "PELOTAS",
+      "sexo": "Masculino",
+      "telefone": "5330269387",
+      "endereco": "Rua Jose Rizzolo 217",
+      "id": 3
     },
     {
-      "id": 4,
-      "nome": "Fulano de Tal",
-      "idade": 30,
-      "sexo": "M",
-      "dataNascimento": "1990-01-01",
-      "profissao": "Programador",
-      "estadoCivil": "Solteiro",
-      "cpf": "12345678901",
-      "cep": "12345678",
-      "endereco": "Rua dos Bobos, 0",
-      "bairro": "Centro",
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "telefone": "11999999999",
-      "email": "xxx"
-    },
-    {
-      "id": 5,
-      "nome": "Fulano de Tal",
-      "idade": 30,
-      "sexo": "M",
-      "dataNascimento": "1990-01-01",
-      "profissao": "Programador",
-      "estadoCivil": "Solteiro",
-      "cpf": "12345678901",
-      "cep": "12345678",
-      "endereco": "Rua dos Bobos, 0",
-      "bairro": "Centro",
-      "cidade": "São Paulo",
-      "estado": "SP",
-      "telefone": "11999999999",
-      "email": "xxx"
+      "nome": "LEONIDIO",
+      "cpf": "123",
+      "email": "tessmannjr@gmail.com",
+      "cidade": "PELOTAS",
+      "dataNAscimento": "2023-12-26",
+      "sexo": "Todes",
+      "telefone": "5330269387",
+      "endereco": "Rua Jose Rizzolo 217",
+      "id": 4
     }
   ],
   "servicos": [
     {
-      "nome": "Teste",
+      "nome": "Testewww",
       "descricao": "Uma massagem relaxante que utiliza movimentos suaves, amassamentos e fricções para aliviar a tensão muscular.",
       "preco": "101",
       "id": 1
@@ -163,11 +127,11 @@
   ],
   "produtos": [
     {
-      "id": 1,
       "nome": "Óleo de Massagem",
       "descricao": "Óleo de massagem com essência de lavanda",
-      "preco": 20,
-      "imagem": ""
+      "preco": "22",
+      "imagem": "",
+      "id": 1
     },
     {
       "id": 2,
@@ -182,6 +146,13 @@
       "descricao": "Óleo de massagem com essência de eucalipto",
       "preco": 28,
       "imagem": ""
+    },
+    {
+      "nome": "teste",
+      "descricao": "teste",
+      "preco": "123",
+      "imagem": "",
+      "id": 4
     }
   ]
 }

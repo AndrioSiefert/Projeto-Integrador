@@ -101,12 +101,20 @@ export default function AlteraServico() {
             />
           </div>
         </div>
+        <div className='flex gap-4'>
         <button
           type="submit"
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
         >
-          Button
+          Alterar
         </button>
+        <button
+          // onClick={router.push('/cliente')}
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 border border-blue-700 rounded"
+        >
+          Voltar
+        </button>
+        </div>
       </form>
       <ToastContainer
         position="top-center"
