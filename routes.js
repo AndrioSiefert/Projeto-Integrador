@@ -6,7 +6,7 @@ import { agendaindex, agendamentoMark } from "./Controller/agendamentoController
 import { anamneseCreate, anamneseIndex } from "./Controller/anamneseController.js"
 import { servicoCreate, servicoDelete, servicoIndex, servicoShow, servicoUpdate } from "./Controller/servicoController.js"
 import { produtoCreate, produtoIndex } from "./Controller/produtoController.js"
-import { feedbackCreate, feedbackDelete, feedbackIndex } from "./Controller/feedbackController.js"
+import { feedbackCreate, feedbackDelete, feedbackIndex, feedbackShow, feedbackUpdate } from "./Controller/feedbackController.js"
 
 import { isAdmin } from "./middlewares/admPermission.js"
 
@@ -20,7 +20,7 @@ router
 
 
     .get('/adm', isAdmin(3), AdmIndex)
-    .post('/adm', isAdmin(3), createAdm)
+    .post('/adm', createAdm)
     .post('/adm/login', loginAdm)
 
     .get('/agendamento', agendaindex)
@@ -39,8 +39,10 @@ router
     .post('/produtos', produtoCreate)
 
     .get('/feedback', feedbackIndex)
+    .get('/feedback/:id', feedbackShow)
     .post('/feedback', feedbackCreate)
     .delete('/feedback/:id', feedbackDelete)
+    .put('/feedback/:id', feedbackUpdate)
 
 
 

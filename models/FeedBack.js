@@ -13,6 +13,10 @@ export const FeedBack = sequelize.define('feedback', {
         type: DataTypes.STRING(200),
         allowNull: false
     },
+    status: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false
+    }
 
 })
 

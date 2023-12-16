@@ -11,17 +11,23 @@ export const feedbackIndex = async (req, res) => {
     }
 }
 
+export const feedbackShow = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const feedback = await FeedBack.findByPk(id);
+        res.status(200).json(feedback);
+    } catch (error) {
+        res.status.json(error)
+    }
+}
+
 export const feedbackCreate = async (req, res) => {
     const { mensagem, cliente_id, servico_id } = req.body;
-
-
-
 
     if (!mensagem || !cliente_id || !servico_id) {
         return res.status(400).json({ id: 0, msg: "Coloque uma mensagem para enviar" })
     }
-
-
 
     try {
         const clienteExistente = await Cliente.findByPk(cliente_id);
@@ -32,7 +38,7 @@ export const feedbackCreate = async (req, res) => {
             return res.status(400).json({ id: 0, msg: "Cliente ou serviço não encontrado" });
         }
 
-        const novoFeedBack = await FeedBack.create({ mensagem, cliente_id, servico_id });
+        const novoFeedBack = await FeedBack.create({ mensagem, cliente_id, servico_id, status: false });
         res.status(201).json({ novoFeedBack, msg: "Feedback enviado com sucesso" });
     } catch (error) {
         res.status(500).send(error);
@@ -83,15 +89,16 @@ export const confirmFeedback = async (req, res) => {
     }
 }
 
+export const feedbackUpdate = async (req, res) => {
+    const { id } = req.params;
+    const { status } = req.body;
 
+    try {
+        const feedback = await FeedBack.update({ status }, { where: { id } });
+        res.status(200).json({ feedback, msg: "Feedback atualizado com sucesso" })
+    } catch (error) {
+        res.status(400).json({ error: 'Erro ao atualizar feedback' });
+    }
+}
 
-
-// export const feedbackStatusIndex = async (req, res) => {
-//     try {
-//         const feedback = await FeedBack.findAll({ where: { status: true } });
-//         res.status(200).json(feedback);
-//     } catch (error) {
-//         res.status(400).send(error);
-//     }
-// }
 
