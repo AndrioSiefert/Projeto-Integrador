@@ -1,4 +1,6 @@
 import { FeedBack } from "../models/FeedBack.js";
+import { Cliente } from "../models/Cliente.js";
+import { Servico } from "../models/Servico.js";
 
 export const feedbackIndex = async (req, res) => {
     try {
@@ -10,17 +12,28 @@ export const feedbackIndex = async (req, res) => {
 }
 
 export const feedbackCreate = async (req, res) => {
-    const { menssagem } = req.body;
-    const feedback_cliente_id = req.id_logged;
+    const { mensagem, cliente_id, servico_id } = req.body;
 
-    if (!menssagem || !feedback_cliente_id) {
-        res.status(400).json({ id: 0, msg: "Coloque uma mensagem para enviar" })
+
+
+
+    if (!mensagem || !cliente_id || !servico_id) {
+        return res.status(400).json({ id: 0, msg: "Coloque uma mensagem para enviar" })
     }
 
 
+
     try {
-        const novoFeedBack = await FeedBack.create({ menssagem, feedback_cliente_id });
-        res.status(201).json(novoFeedBack);
+        const clienteExistente = await Cliente.findByPk(cliente_id);
+        const servicoExistente = await Servico.findByPk(servico_id);
+
+        if (!clienteExistente || !servicoExistente) {
+            console.log("Cliente ou serviço não encontrado");
+            return res.status(400).json({ id: 0, msg: "Cliente ou serviço não encontrado" });
+        }
+
+        const novoFeedBack = await FeedBack.create({ mensagem, cliente_id, servico_id });
+        res.status(201).json({ novoFeedBack, msg: "Feedback enviado com sucesso" });
     } catch (error) {
         res.status(500).send(error);
     }

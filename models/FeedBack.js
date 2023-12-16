@@ -1,6 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from "../databases/dados.js";
 import { Cliente } from "./Cliente.js";
+import { Servico } from "./Servico.js";
 
 export const FeedBack = sequelize.define('feedback', {
     id: {
@@ -8,22 +9,18 @@ export const FeedBack = sequelize.define('feedback', {
         primaryKey: true,
         autoIncrement: true
     },
-    menssagem: {
+    mensagem: {
         type: DataTypes.STRING(200),
         allowNull: false
     },
 
-    status: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: false
-    }
 })
 
 
 
 FeedBack.belongsTo(Cliente, {
     foreignKey: {
-        name: 'feedback_cliente_id',
+        name: 'cliente_id',
         allowNull: false
     },
     onDelete: 'RESTRICT',
@@ -31,10 +28,19 @@ FeedBack.belongsTo(Cliente, {
 })
 
 Cliente.hasMany(FeedBack, {
+    foreignKey: 'cliente_id'
+})
+
+
+
+FeedBack.belongsTo(Servico, {
     foreignKey: {
-        name: 'feedback_cliente_id',
+        name: 'servico_id',
         allowNull: false
     },
     onDelete: 'RESTRICT',
     onUpdate: 'CASCADE'
+})
+Servico.hasMany(FeedBack, {
+    foreignKey: 'servico_id'
 })
