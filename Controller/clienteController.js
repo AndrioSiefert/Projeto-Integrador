@@ -55,6 +55,37 @@ export const clienteCreate = async (req, res) => {
 
 
 
+export const clienteLogin = async (req, res) => {
+    const { email, senha } = req.body;
+
+    if (!email || !senha) {
+        res.status(400).json({ id: 0, msg: 'Erro... Informe os dados' });
+        return;
+    }
+
+    try {
+        const cliente = await Cliente.findOne({ where: { email } });
+
+        if (cliente == null) {
+            res.status(400).json({ erro: 'Erro... E-mail inválido' });
+            return;
+        }
+
+        if (bcrypt.compareSync(senha, cliente.senha)) {
+            const token = jwt.sign({ id_logged: cliente.id }, process.env.JWT_KEY, { expiresIn: '1h' });
+            res.status(200).json({ token, msg: 'Login efetuado com sucesso' });
+        } else {
+            res.status(400).json({ erro: 'Erro... Senha inválida' });
+        }
+    } catch (error) {
+        res.status(400).json(error);
+    }
+}
+
+
+
+
+
 
 
 
@@ -68,7 +99,7 @@ const transporter = nodemailer.createTransport({
 });
 
 
-export const usuarioSenha = async (req, res) => {
+export const clienteSenha = async (req, res) => {
     const { email, senha, novaSenha } = req.body;
 
     if (!email || !senha || !novaSenha) {
@@ -77,9 +108,9 @@ export const usuarioSenha = async (req, res) => {
     }
 
     try {
-        const usuario = await Cliente.findOne({ where: { email } });
+        const cliente = await Cliente.findOne({ where: { email } });
 
-        if (usuario == null) {
+        if (cliente == null) {
             res.status(400).json({ erro: 'Erro... E-mail inválido' });
             return;
         }

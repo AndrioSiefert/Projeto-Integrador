@@ -62,3 +62,19 @@ export const servicoDelete = async (req, res) => {
     }
 }
 
+export const servicoShow = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const servico = await Servico.findOne({ where: { id: id } });
+
+        if (!servico) {
+            return res.status(404).json({ msg: "Serviço não encontrado" });
+        }
+
+        res.status(200).json(servico);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+

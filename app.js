@@ -8,6 +8,7 @@ import { Admin } from './models/Admin.js';
 import { Agendamento } from './models/Agendamento.js';
 import { Produto } from './models/Produto.js';
 import { Servico } from './models/Servico.js';
+import { FeedBack } from './models/FeedBack.js';
 
 
 
@@ -26,11 +27,12 @@ const conecta_db = async () => {
     try {
         await sequelize.authenticate();
         await Cliente.sync();
+        await Admin.sync();
         await Agendamento.sync();
         await Anamnese.sync();
-        await Admin.sync();
         await Produto.sync();
         await Servico.sync();
+        await FeedBack.sync();
     }
     catch (error) {
         console.error("Erro na Conexão", error);
