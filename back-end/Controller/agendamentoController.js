@@ -49,6 +49,27 @@ export const agendamentoMark = async (req, res) => {
   }
 };
 
+export const agendamentoDelete = async (req,res) => {
+  const {id} = req.params;
+  
+  try { 
+    const agenda = await Agendamento.destroy({where:{id:id}});
 
-// agendamento delete
-// agendamento update
+    res.status(200).json(agenda);
+  } catch (error) {
+    res.status(400).send(error);    
+  }
+}
+
+export const agendamentoUpdate = async (req,res) => {
+  const {id} = req.params;
+  const {mes, dia, horas} = req.body;
+
+  try {
+    const agenda = await Agendamento.update({mes, dia , horas}, {where:{id:id}})
+
+    res.status(200).json(agenda)
+  } catch (error) {
+    res.status(400).send(error);
+  }
+}
