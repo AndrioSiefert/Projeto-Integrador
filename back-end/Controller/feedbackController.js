@@ -58,36 +58,24 @@ export const feedbackDelete = async (req, res) => {
     }
 }
 
-export const feedbackStatus = async (req, res) => {
-    const { id } = req.params;
-    const { status } = req.body;
+// export const confirmFeedback = async (req, res) => {
+//     try {
+//         const { id } = req.params;
 
-    try {
-        const feedback = await FeedBack.update({ status }, { where: { id } });
-        res.status(200).json(feedback);
-    } catch (error) {
-        res.status(400).send(error);
-    }
-}
+//         const feedback = await FeedBack.findByPk(id);
 
-export const confirmFeedback = async (req, res) => {
-    try {
-        const { id } = req.params;
+//         if (!feedback) {
+//             return res.status(404).json({ error: 'Feedback não encontrado' });
+//         }
 
-        const feedback = await FeedBack.findByPk(id);
+//         feedback.status = true;
+//         await feedback.save();
 
-        if (!feedback) {
-            return res.status(404).json({ error: 'Feedback não encontrado' });
-        }
-
-        feedback.status = true;
-        await feedback.save();
-
-        return res.status(200).json(feedback);
-    } catch (error) {
-        res.status(400).json({ error: 'Erro ao confirmar feedback' });
-    }
-}
+//         return res.status(200).json(feedback);
+//     } catch (error) {
+//         res.status(400).json({ error: 'Erro ao confirmar feedback' });
+//     }
+// }
 
 export const feedbackUpdate = async (req, res) => {
     const { id } = req.params;

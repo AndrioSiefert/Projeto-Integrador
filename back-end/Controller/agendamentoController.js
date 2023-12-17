@@ -11,10 +11,6 @@ export const agendaindex = async (req, res) => {
   }
 }
 
-// TAREFAS: ARRUMAR
-
-// PERMITIR QUE O CLIENTE MARQUE EM DIAS DIFERENTES MAS NÃO NO MESMO DIA!
-
 export const agendamentoMark = async (req, res) => {
 
   const mes = req.body.mes;
@@ -52,3 +48,7 @@ export const agendamentoMark = async (req, res) => {
     res.status(400).send(error);
   }
 };
+
+
+// agendamento delete
+// agendamento update

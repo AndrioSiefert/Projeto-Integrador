@@ -21,3 +21,30 @@ export const produtoCreate = async (req, res) => {
 
     }
 }
+
+export const produtoUpdate = async (req, res) => {
+    const { id } = req.params;
+    const { nome, descricao, preco, imagem } = req.body;
+
+    try {
+        const produto = await Produto.update({ nome, descricao, preco, imagem }, { where: { id } });
+        res.status(200).json(produto);
+    } catch (error) {
+        res.status(400).send(error);
+
+    }
+}
+
+export const produtoDelete = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const produto = await Produto.destroy({ where: { id } });
+        res.status(200).json(produto);
+    } catch (error) {
+        res.status(400).send(error);
+
+    }
+}
+
+
