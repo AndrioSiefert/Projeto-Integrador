@@ -14,7 +14,7 @@ export default function ListaFeedbacks() {
   useEffect(() => {
     async function loadFeedbacks() {
       const response = await fetch(
-        'http://localhost:3004/feedbacks?servico_id=' + params.id,
+        'http://localhost:3004/feedback/' + params.id,
       );
       const data = await response.json();
       setFeedbacks(data);

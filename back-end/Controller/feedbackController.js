@@ -15,7 +15,7 @@ export const feedbackShow = async (req, res) => {
     const { id } = req.params;
 
     try {
-        const feedback = await FeedBack.findByPk(id);
+        const feedback = await FeedBack.findAll({ where: { servico_id: id } });
         res.status(200).json(feedback);
     } catch (error) {
         res.status.json(error)

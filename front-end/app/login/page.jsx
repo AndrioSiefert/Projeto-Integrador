@@ -12,16 +12,25 @@ export default function Login() {
   const router = useRouter();
 
   async function verificaLogin(data) {
-    const filtro = `?email=${data.email}&senha=${data.senha}`;
-    const response = await fetch('http://localhost:3004/usuarios' + filtro);
-    const dados = await response.json();
-    if (dados.length == 0) {
-      alert('Usuário ou senha inválidos');
+    // const filtro = `?email=${data.email}&senha=${data.senha}`;
+    const response = await fetch("http://localhost:3004/cliente/login",
+      {
+        method: "POST",
+        headers: { "Content-type": "application/json" },
+        body: JSON.stringify({email: data.email, senha: data.senha})
+      },
+    )
+    
+    if (response.status == 401) {
+      alert("Não está cadastrado")
     } else {
-      //alert('Login efetuado com sucesso');
-      mudaId(dados[0].id);
-      mudaNome(dados[0].nome);
-      router.push('/');
+      // alert("Ok!")
+      const cliente = await response.json()
+//      console.log(cliente)  
+      mudaId(cliente.id)
+      mudaNome(cliente.nome)
+      // localStorage.setItem("cliente_logado", JSON.stringify({id: cliente.id, nome: cliente.nome}))
+      router.push("/")
     }
   }
 

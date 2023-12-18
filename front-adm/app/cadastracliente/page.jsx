@@ -9,7 +9,7 @@ export default function CadastraCliente() {
   const router = useRouter();
 
   async function enviaDados(data) {
-    const cliente = await fetch('http://localhost:3004/cliente', {
+    const cliente = await fetch('http://localhost:3004/anamnese', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

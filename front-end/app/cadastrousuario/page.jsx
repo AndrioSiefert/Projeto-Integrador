@@ -11,7 +11,7 @@ export default function CadastraUsuario() {
 
   async function enviaDados(data) {
     const response = await fetch(
-      'http://localhost:3004/usuarios',
+      'http://localhost:3004/cliente',
       {
         method: 'POST',
         headers: {

@@ -72,8 +72,12 @@ export const clienteLogin = async (req, res) => {
         }
 
         if (bcrypt.compareSync(senha, cliente.senha)) {
-            const token = jwt.sign({ id_logged: cliente.id }, process.env.JWT_KEY, { expiresIn: '1h' });
-            res.status(200).json({ token, msg: 'Login efetuado com sucesso' });
+            // const token = jwt.sign({ 
+            //     user_logado_id: usuario.id,
+            //     user_logado_nome: usuario.nome
+            //  }, process.env.JWT_KEY, { expiresIn: '1h' });
+            // res.status(200).json({ token, msg: 'Login efetuado com sucesso' });
+            res.status(200).json({ id: cliente.id, nome: cliente.nome })
         } else {
             res.status(400).json({ erro: 'Erro... Senha inválida' });
         }

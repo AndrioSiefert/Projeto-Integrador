@@ -14,7 +14,7 @@ export default function Cliente() {
 
   useEffect(() => {
     async function loadClientes() {
-      const response = await fetch('http://localhost:3004/cliente');
+      const response = await fetch('http://localhost:3004/anamnese');
       const data = await response.json();
       setClientes(data);
       setIsLoading(false);
@@ -23,7 +23,7 @@ export default function Cliente() {
   }, []);
 
   async function excluiCliente(id) {
-    const response = await fetch('http://localhost:3004/cliente/' + id, {
+    const response = await fetch('http://localhost:3004/anamnese/' + id, {
       method: 'DELETE',
     });
     const novosDados = clientes.filter((cliente) => cliente.id != id);

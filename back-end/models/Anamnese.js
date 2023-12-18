@@ -1,6 +1,5 @@
 import { sequelize } from '../databases/dados.js';
 import { DataTypes } from 'sequelize';
-import { Cliente } from './Cliente.js'
 
 export const Anamnese = sequelize.define('anamnese', {
     id: {
@@ -13,7 +12,7 @@ export const Anamnese = sequelize.define('anamnese', {
         allowNull: false
     },
     sexo: {
-        type: DataTypes.STRING(1),
+        type: DataTypes.STRING(15),
         allowNull: false
     },
     dataNascimento: {
@@ -41,13 +40,4 @@ export const Anamnese = sequelize.define('anamnese', {
         allowNull: true
     }
 
-});
-
-Anamnese.belongsTo(Cliente, {
-    foreignKey: {
-        name: 'cliente_id',
-        allowNull: false
-    },
-    onDelete: 'RESTRICT',
-    onUpdate: 'CASCADE'
-});
+})

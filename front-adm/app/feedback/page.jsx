@@ -13,7 +13,7 @@ export default function Feedbacks() {
 
   useEffect(() => {
     async function loadFeedbacks() {
-      const response = await fetch('http://localhost:3004/feedbacks');
+      const response = await fetch('http://localhost:3004/feedback');
       const data = await response.json();
       setFeedbacks(data);
       setIsLoading(false);
@@ -22,7 +22,7 @@ export default function Feedbacks() {
   }, []);
 
   async function excluiFeedback(id) {
-    const response = await fetch('http://localhost:3004/feedbacks/' + id, {
+    const response = await fetch('http://localhost:3004/feedback/' + id, {
       method: 'DELETE',
     });
     const novosDados = feedbacks.filter((feedback) => feedback.id != id);

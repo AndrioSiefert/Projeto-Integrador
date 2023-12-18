@@ -36,7 +36,7 @@ export default function CadastraFeedback() {
   async function enviaDados(data) {
     const feedback = { ...data, cliente_id: clienteId, servico_id: servico.id };
     const response = await fetch(
-      'http://localhost:3004/feedbacks',
+      'http://localhost:3004/feedback',
       {
         method: 'POST',
         headers: {

@@ -13,7 +13,8 @@ import { isAdmin } from "./middlewares/admPermission.js"
 const router = Router()
 
 router
-    .get('/cliente', isAdmin(2), clienteIndex)
+    // .get('/cliente', isAdmin(2), clienteIndex)
+    .get('/cliente', clienteIndex)
     .post('/cliente', clienteCreate)
     .post('/cliente/login', clienteLogin)
     .post('/cliente/new', clienteSenha)
