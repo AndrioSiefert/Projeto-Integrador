@@ -9,6 +9,7 @@ import { Agendamento } from './models/Agendamento.js';
 import { Produto } from './models/Produto.js';
 import { Servico } from './models/Servico.js';
 import { FeedBack } from './models/FeedBack.js';
+import { FormAnamnese } from './models/FormAnamnese.js';
 
 
 
@@ -30,6 +31,7 @@ const conecta_db = async () => {
         await Admin.sync();
         await Agendamento.sync();
         await Anamnese.sync();
+        await FormAnamnese.sync();
         await Produto.sync();
         await Servico.sync();
         await FeedBack.sync();

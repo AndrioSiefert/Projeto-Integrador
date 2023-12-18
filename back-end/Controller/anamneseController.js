@@ -1,4 +1,5 @@
 import { Anamnese } from "../models/Anamnese.js";
+import { FormAnamnese } from "../models/FormAnamnese.js";
 
 
 
@@ -68,3 +69,22 @@ export const anamneseDelete = async (req, res) => {
     }
 }
 
+
+
+
+
+// CONTROLLER MODEL FORM ANAMNESE
+
+export const formAnamneseIndex = async (req, res) => {
+    try {
+        const formAnamnese = await FormAnamnese.findAll();
+        res.status(200).json(formAnamnese);
+    } catch (error) {
+        res.status(400).send(error);
+    }
+}
+
+export const formAnamneseCreate = async (req, res) => { }
+
+
+export const formAnamneseUpdate = async (req, res) => { }

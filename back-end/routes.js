@@ -3,7 +3,7 @@ import { Router } from "express"
 import { clienteIndex, clienteCreate, clienteSenha, clienteLogin } from "./Controller/clienteController.js"
 import { AdmIndex, createAdm, loginAdm } from "./Controller/admController.js"
 import { agendaindex, agendamentoMark } from "./Controller/agendamentoController.js"
-import { anamneseCreate, anamneseIndex } from "./Controller/anamneseController.js"
+import { anamneseCreate, anamneseIndex, formAnamneseIndex } from "./Controller/anamneseController.js"
 import { servicoCreate, servicoDelete, servicoIndex, servicoShow, servicoUpdate } from "./Controller/servicoController.js"
 import { produtoCreate, produtoDelete, produtoIndex, produtoUpdate } from "./Controller/produtoController.js"
 import { feedbackCreate, feedbackDelete, feedbackIndex, feedbackShow, feedbackUpdate } from "./Controller/feedbackController.js"
@@ -46,6 +46,10 @@ router
     .post('/feedback', feedbackCreate)
     .delete('/feedback/:id', feedbackDelete)
     .put('/feedback/:id', feedbackUpdate)
+
+
+    // FORM ANAMNESE
+    .get('/formAnamnse', formAnamneseIndex)
 
 
 
