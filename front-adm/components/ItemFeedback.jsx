@@ -28,9 +28,9 @@ export default function ItemProduto(props) {
         scope="row"
         className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
       >
-        {props.feedback.cliente_id}
+        {props.feedback.cliente.nome}
       </th>
-      <td className="px-6 py-4">{props.feedback.servico_id}</td>
+      <td className="px-6 py-4">{props.feedback.servico.nome}</td>
       <td className="px-6 py-4">{props.feedback.mensagem}</td>
       <td className="px-6 py-4">
         <div className="flex gap-2">

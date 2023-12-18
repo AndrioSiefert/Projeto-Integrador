@@ -6,7 +6,7 @@ export default function ItemFeedback(props) {
       <p className="font-bold text-indigo-800 text-xl">
         {props.feedback.mensagem}
       </p>
-      Paciente: {props.feedback.cliente_id}
+      Paciente: {props.feedback.cliente.nome}
     </div>
   );
 }

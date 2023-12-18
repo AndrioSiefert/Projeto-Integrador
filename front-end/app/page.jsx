@@ -10,6 +10,7 @@ import ItemServico from '@/components/ItemServico';
 import ItemProduto from '@/components/ItemProduto';
 import BackToTop from '@/components/BackToTop';
 import { motion, AnimatePresence } from 'framer-motion';
+import SectionFooter from '@/components/SectionFooter';
 
 export default function Home() {
   const [servicos, setServicos] = useState([]);
@@ -42,44 +43,45 @@ export default function Home() {
   return (
     <div>
       <AnimatePresence>
-            <motion.div
-            initial={{opacity: 0, y: 15}}
-            animate={{opacity: 1, y:0}}
-            exist={{opacity: 0, y:15}}
-            transition={{delay: 0.30}}>
-      <SectionBanner />
-      <SectionPersona />
-      
-          
-      <section id="services" className="bg-slate-200">
-        <div className="flex justify-end items-center max-w-[1246px] gap-4 w-full mx-auto border-b-2 border-fuchsia-400 p-4 ">
-          <div className="shadow-black h-5 w-5 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-          <div className="text-end text-4xl  font-bold text-slate-800">
-            SERVIÇOS
-          </div>
-        </div>
-        <div className="flex h-full mx-auto justify-center pt-4 pb-4">
-          <div className="grid xl:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-slate-200 text-slate-800">
-            {listaServicos}
-          </div>
-        </div>
-        </section>
-        <section id="products" className="bg-slate-200">
-        <div className="flex justify-start items-center max-w-[1246px] gap-4 w-full mx-auto border-b-2 border-fuchsia-400 p-4 ">
-          <div className="text-end text-4xl  font-bold text-slate-800">
-            PRODUTOS
-          </div>
-          <div className="shadow-black h-5 w-5 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
-        </div>
-        <div className="flex h-full mx-auto justify-center pt-4 pb-4">
-          <div className="grid xl:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-slate-200 text-slate-800">
-            {listaProdutos}
-          </div>
-        </div>
-        </section>
-        <BackToTop />
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exist={{ opacity: 0, y: 15 }}
+          transition={{ delay: 0.3 }}
+        >
+          <SectionBanner />
+          <SectionPersona />
+
+          <section id="services" className="bg-slate-200">
+            <div className="flex justify-end items-center max-w-[1246px] gap-4 w-full mx-auto border-b-2 border-fuchsia-400 p-4 ">
+              <div className="shadow-black h-5 w-5 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+              <div className="text-end text-4xl  font-bold text-slate-800">
+                SERVIÇOS
+              </div>
+            </div>
+            <div className="flex h-full mx-auto justify-center pt-4 pb-4">
+              <div className="grid xl:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-slate-200 text-slate-800">
+                {listaServicos}
+              </div>
+            </div>
+          </section>
+          <section id="products" className="bg-slate-200">
+            <div className="flex justify-start items-center max-w-[1246px] gap-4 w-full mx-auto border-b-2 border-fuchsia-400 p-4 ">
+              <div className="text-end text-4xl  font-bold text-slate-800">
+                PRODUTOS
+              </div>
+              <div className="shadow-black h-5 w-5 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
+            </div>
+            <div className="flex h-full mx-auto justify-center pt-4 pb-4">
+              <div className="grid xl:grid-cols-3 gap-4 md:grid-cols-2 sm:grid-cols-1 bg-slate-200 text-slate-800">
+                {listaProdutos}
+              </div>
+            </div>
+          </section>
+          <BackToTop />
         </motion.div>
-          </AnimatePresence>
+      </AnimatePresence>
+      <SectionFooter />
     </div>
   );
 }

@@ -114,7 +114,7 @@ export default function Header() {
                     </defs>
                   </svg>
                 </div>
-                <div className="text-4xl">Eliane Seifert</div>
+                <div className="text-4xl">Eliane Siefert</div>
               </div>
             </Link>
           </div>
